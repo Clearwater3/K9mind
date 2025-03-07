@@ -18,9 +18,9 @@ def move_servo(direction, duration):
     - speed: duty cycle (default slightly above neutral)
     """
     if direction == "forward":
-        duty_cycle = 9.05  # above 7.05% to move forward
+        duty_cycle = 11.05  # above 7.05% to move forward
     elif direction == "backward":
-        duty_cycle =5.05  # below 7.05% to move backward
+        duty_cycle =3.05  # below 7.05% to move backward
     else:
         return
 
@@ -31,10 +31,11 @@ def move_servo(direction, duration):
     sleep(0.5)  # Small pause
 
 try:
-    for i in range(10):
+    for i in range(1):
+        sleep(0)
         print("Moving small step forward...")
         move_servo("forward", duration=0.2)  # Move forward
-        sleep(0.25)
+        sleep(0.05)
 
         print("Moving small step backward...")
         move_servo("backward", duration=0.2)  # Move backward
